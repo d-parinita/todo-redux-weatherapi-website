@@ -9,6 +9,6 @@ export default function Layout({children}) {
           <Provider store={store}>
               {children}
           </Provider>
-  </>
+    </>
   )
 }

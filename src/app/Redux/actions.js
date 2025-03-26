@@ -7,6 +7,7 @@ export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
 export const SIGN_IN_REQUEST = 'SIGN_IN_REQUEST';
 export const SIGN_IN_SUCCESS = 'SIGN_IN_SUCCESS';
 export const SIGN_IN_FAILURE = 'SIGN_IN_FAILURE';
+export const LOGOUT = 'LOGOUT';
 
 // Weather Action Creators
 export const fetchDataRequest = (lat, lon) => ({
@@ -39,4 +40,8 @@ export const signInSuccess = (user) => (
 export const signInFailure = (error) => ({
   type: SIGN_IN_FAILURE,
   payload: error,
+});
+
+export const logout = () => ({
+  type: LOGOUT,
 });

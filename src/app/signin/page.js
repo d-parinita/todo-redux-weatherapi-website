@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signInRequest } from "../Redux/actions";
 import { routes } from "../utils/routes";
@@ -16,17 +15,12 @@ export default function Page() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('btn click')
     dispatch(signInRequest(email, password));
   };
 
-  // Redirect if user is authenticated
-//   if (user) {
-//     router.push(routes.HOME);
-//   }
-useEffect(() => {
-    console.log(user)
-},[user])
+ if (user) {
+    router.push(routes.HOME);
+  }
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-dark text-light">

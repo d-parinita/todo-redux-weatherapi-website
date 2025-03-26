@@ -3,12 +3,11 @@ import { Fragment, useEffect, useState } from "react";
 import CustomNavbar from "./Components/CustomNavbar";
 import TodoCard from "./Components/TodoCard";
 import TodoForm from "./Components/TodoForm";
-import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import { routes } from "./utils/routes";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDataRequest } from "./Redux/actions";
-import Layout from "./Components/Layout";
+import { toast } from "react-toastify";
 
 export default function Home() {
 
@@ -60,21 +59,16 @@ export default function Home() {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          dispatch(fetchDataRequest(latitude, longitude)); // Dispatch with lat & lon
+          dispatch(fetchDataRequest(latitude, longitude)); 
         },
         (error) => {
-          console.error("Error getting location:", error);
+          toast.error("Error getting location");
         }
       );
     } else {
-      console.error("Geolocation is not available in this browser.");
+      toast.error("Geolocation is not available in this browser.");
     }
-  },[dispatch])
-
-  useEffect(() => {
-    console.log(data)
-
-  },[data])
+  }, [dispatch])
 
   return (
     <>

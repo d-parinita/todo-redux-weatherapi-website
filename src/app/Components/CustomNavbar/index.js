@@ -1,19 +1,23 @@
 'use client'
+import { logout } from '@/app/Redux/actions'
 import { routes } from '@/app/utils/routes'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
 
 export default function CustomNavbar() {
 
+    const dispatch = useDispatch();
     const router = useRouter()
 
     const handleLogout = () => {
         if (confirm("Are you sure you want to logout?")) {
-          localStorage.removeItem('user')
-          toast.success('Logout successfully')
-          router.push(routes.SIGNIN)
+            localStorage.removeItem('user'); 
+            dispatch(logout()); 
+            toast.success('Logout successfully');
+            router.push(routes.SIGNIN);
         }
     }
 
