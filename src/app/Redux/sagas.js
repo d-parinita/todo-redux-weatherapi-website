@@ -28,7 +28,7 @@ function* fetchDataSaga(action) {
 function* signInSaga(action) {
   try {
     const { email, password } = action.payload;
-    if (password.length < 6) throw new Error('Password must be at least 6 characters');
+    if (password?.length < 6) throw new Error('Password must be at least 6 characters');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error('Invalid email format');
     const user = { email, token: uuidv4() };
     localStorage.setItem('user', JSON.stringify(user));
