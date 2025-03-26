@@ -73,7 +73,7 @@ export default function Home() {
   return (
     <>
       <CustomNavbar/>
-      <div className="bg-dark mt-0 pb-5">
+      <div className="mt-0 pb-5">
         <TodoForm readTodo={readTodo}/>
         <div className="container mt-4">
           <div className="mb-4">
