@@ -87,9 +87,9 @@ export default function Home() {
                 <option value="ascending">Low to high</option>
             </select>
           </div>
-          {todos.length > 0 ? (
+          {todos?.length > 0 ? (
             <div className="row g-4">
-              {todos.map((item, i) => (
+              {todos?.map((item, i) => (
                 <div key={i} className="col-12 col-sm-6 col-md-4">
                   <Fragment>
                     <TodoCard
