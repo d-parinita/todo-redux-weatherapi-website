@@ -4,6 +4,9 @@
 
 https://todo-redux-weatherapi-website.vercel.app/
 
+## Screenshot 
+![Preview](https://github.com/d-parinita/todo-redux-weatherapi-website/blob/main/public/todo.png?raw=true)
+
 ## Project Overview
 
 This is a feature-rich Todo application that integrates weather information for outdoor tasks, built using React, Redux, Redux Saga, and Bootstrap. The app provides seamless user authentication and dynamic weather updates based on the user's current location.
